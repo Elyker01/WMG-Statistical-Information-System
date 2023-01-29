@@ -1,0 +1,580 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+}
+
+.wmgLogo {
+    position: absolute;
+    width: 416px;
+    height: 121px;
+    left: 0px;
+    top: 12px;
+}
+
+.greyRectangle{
+    position: absolute;
+    width: 1173px;
+    height: 105px;
+    left: 442px;
+    top: 16px;
+
+    background: rgba(189, 189, 189, 0.74);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    }
+
+.rectangle {
+    position: absolute;
+    width: 1491px;
+    height: 729px;
+    left: 214px;
+    top: 160px;
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+
+.background { 
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.warwickUni{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 821px;
+    left: 0px;
+    top: 149px;
+
+    background: url(warwickUni.png);
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.rectangleBottom{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 110px;
+    left: 0px;
+    top: 970px;
+
+    background: #BDBDBD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    }
+
+.teachingMethodRectangle{
+    position: absolute;
+    width: 282px;
+    height: 503px;
+    left: 1389px;   
+    top: 208px;
+
+    background: #BDACE0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.teachingMethod{
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+   
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.teachingMethodText{
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.viewData{
+    
+    position: absolute;
+    width: 248px;
+    height: 72px;
+    left: 0px;
+    top: 230px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.searchBar{
+    position: absolute;
+    width: 580px;
+    height: 59px;
+    left: -1150px;
+    top: -22px;
+
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.advancedSearchBox{
+    /* Advanced Search Box */
+
+    
+    position: absolute;
+    width: 179px;
+    height: 59px;
+    left: -742px;
+    top: -19px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+}
+
+.searchKeywordText{
+
+    /* Search for Keyword(s) or by statistic ID */
+
+
+    position: absolute;
+    width: 400px;
+    height: 59px;
+    left: -1143px;
+    top: -50px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+
+    color: #78787A;
+}
+
+.advancedSearchText{
+    position: absolute;
+    width: 172px;
+    height: 59px;
+    left: -734px;
+    top: -50px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.magnifyingGlass{
+    position: absolute;
+    width: 27px;
+    height: 100px;
+    left: 610px;
+    top: -50px;
+}
+
+.years{
+  position: absolute;
+width: 248px;
+height: 72px;
+left: 0px;
+top: 300px;
+
+font-family: 'Oswald';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+list-style-type: square;
+justify-content: center;
+
+ 
+}
+
+.home{
+    
+    position: absolute;
+    width: 101px;
+    height: 44px;
+    left: 463px;
+    top: 51px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+a.home {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+a.home:hover {
+    color: white;
+}
+
+.menu{
+    position: absolute;
+    width: 90px;
+    height: 44px;
+    left: 594px;
+    top: 51px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.tableView{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 1388px;
+    top: 727px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+
+    color: #616161;
+
+}
+
+.tableTitle{
+    position: absolute;
+    width: 324px;
+    height: 59px;
+    left: 942px;
+    top: 204px;
+
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.tableTitleText{
+    position: absolute;
+    width: 324px;
+    height: 59px;
+    left: 942px;
+    top: 204px;
+
+    
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.warwickUniHome{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 507px;
+    left: 0px;
+    top: 149px;
+
+    background: url(warwickUni.png);
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.searchKeywordTextHome{
+
+    /* Search for Keyword(s) or by statistic ID */
+
+
+    position: absolute;
+    width: 400px;
+    height: 59px;
+    left: -1143px;
+    top: -50px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+
+
+form {
+    display: flex;
+}
+
+.searchlabel, .searchBar, .advancedSearchBox {
+    display: inline-block;
+}
+
+
+
+.searchlabel,.searchBar,.advancedSearchBox{
+    height: 59px;
+    line-height: 59px;
+}
+
+.homeTitle{
+    position: absolute;
+    width: 544px;
+    height: 543px;
+    left: 38px;
+    top: 53px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 126px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.stat1{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 35px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: #000000, 1px;
+}
+
+.stat2{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 500px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: #000000, 1px;
+}
+
+.stat3{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 1000px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.stat4{
+    position: absolute;
+    width: 228px;
+    height: 76px;
+    left: 1500px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.lectureSatisfaction{
+    position: absolute;
+    width: 219px;
+    height: 44px;
+    left: 1330px;
+    top: 177px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    
+}
+
+.lectureSatisfactionImage{
+    position: absolute;
+    width: 610px;
+    height: 422px;
+    left: 1267px;
+    top: 192px;
+    
+    background: url(image.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+}
+
+.advancedSearchBoxHome{
+    position: absolute;
+    width: 213px;
+    height: 64px;
+    left: 900px;
+    top: 540px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+}
+
+.menuBox1{
+    position: absolute;
+    width: 705px;
+    height: 60px;
+    left: 620px;
+    top: 100px;
+
+    background: #EDC473;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+

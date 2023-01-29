@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WMGSIS In-Person Classes vs Average Grade</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <img class="wmgLogo" src="{{ url_for('static', filename='wmg.png') }}" alt="wmg">
+    <img class="warwickUniHome" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
+    <img class="greyRectangle"src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
+    <nav>
+      <a class="home" href="{{ url_for('home') }}">Home</a>
+      <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+    </nav>
+  </header>
+  <main>
+    <h1 class="homeTitle">WMG Statistical Information System</h1>
+      <form>
+        <img class="lectureSatisfactionImage" src="{{ url_for('static', filename='lectureSatisfaction.svg') }}" alt="lectureSatisfactionImage">
+        <h2 class="lectureSatisfaction">Lecture Satisfaction</h2>
+        <div>
+        <input class="searchBarHome" style="
+            position: absolute;
+            width: 580px;
+    height: 59px;
+        left: 525px;
+        top: 540px; box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;" type="text" id="search">
+        <button class="advancedSearchBoxHome">
+          <p style="height: 11px; font-family: 'Oswald';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 25px;
+          line-height: 39px;
+          display: flex;
+          align-items: center;
+          justify-content: center;">Advanced Search</p>
+        </button>
+        <div class="stat1">
+          <p style="text-shadow: 2px 2px black;">72% of students were satisfied or above in Post Module Review.</p>
+        </div>
+        <div class="stat2">
+          <p style="text-shadow: 2px 2px black;">95% attendance over the 2021/2022 academic year.</p>
+        </div>
+        <div class="stat3">
+          <p style="text-shadow: 2px 2px black;">81% of students achieved a 1st in the 2021/2022 academic year.</p>
+        </div>
+        <div class="stat4">
+          <p style="text-shadow: 2px 2px black;">See top statistic from this month></p>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="rectangleBottom">
+    <p style="font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;color: #FFFFFF;">Contact WMG at help@wmgcustomerservice.com</p>
+    </div>
+  </footer>
+
+  
+</body>
+</html>

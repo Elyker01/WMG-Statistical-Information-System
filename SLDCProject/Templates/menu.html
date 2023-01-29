@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WMGSIS In-Person Classes vs Average Grade</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <img class="wmgLogo" src="{{ url_for('static', filename='wmg.png') }}" alt="wmg">
+    <img class="warwickUni" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
+    <img class="greyRectangle"src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
+    <nav>
+      <a class="home" href="{{ url_for('home') }}">Home</a>
+      <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+    </nav>
+  </header>
+  <main>
+    <div class="rectangle"></div>
+    <a class="home" href="{{ url_for('home') }}">In-Person classes vs Average Grade per Module</a>
+    <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+    </div>
+      <form>
+        <div class="menuBox1">
+        <a style="position: absolute;
+        width: 707px;
+        height: 41px;
+        left: 614px;
+        top: 348px;
+        
+        font-family: 'Oswald';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 52px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        
+        color: #FFFFFF;
+        
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" href="{{ url_for('home') }}">Homepage</a>
+        
+        </div>
+        <button class="advancedSearchBox">Advanced Search</button>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="rectangleBottom">
+    <p style="font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;color: #FFFFFF;">Contact WMG at help@wmgcustomerservice.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
