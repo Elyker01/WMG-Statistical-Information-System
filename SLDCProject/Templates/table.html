@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <table>
+        <thead>
+            <tr>
+                <th>Classes</th>
+                <th>Average Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class, grade in data %}
+            <tr>
+                <td>{{ class }}</td>
+                <td>{{ grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</head>

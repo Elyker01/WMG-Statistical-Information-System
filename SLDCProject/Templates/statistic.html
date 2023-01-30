@@ -17,7 +17,44 @@
   <main>
     <div class="rectangle"></div>
     <h1 class="tableTitleText">In person Classes vs Average Grade</h1>
-    <button class="tableView">Toggle table view</button>
+    <img class="chart" id="chartImg" src="{{ url_for('static', filename='chart.png') }}" alt="Percentage of In-person Classes vs Average Grade per Module Chart">
+    <table class="chart" id="dataTable" style="display:none;">
+        <thead>
+            <tr>
+                <th>Module</th>
+                <th>Percentage of In-person Classes</th>
+                <th>Average Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for module, percent, grade in data %}
+            <tr>
+                <td>{{ module }}</td>
+                <td>{{ percent }}</td>
+                <td>{{ grade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="tableView" id="toggleBtn" onclick="toggleView()">Toggle table view</button>
+    <script>
+      function toggleView() {
+          let chartImg = document.getElementById("chartImg");
+          let dataTable = document.getElementById("dataTable");
+          let toggleBtn = document.getElementById("toggleBtn");
+  
+          if (chartImg.style.display === "none") {
+              chartImg.style.display = "block";
+              dataTable.style.display = "none";
+              toggleBtn.innerHTML = "Toggle table view";
+          } else {
+              chartImg.style.display = "none";
+              dataTable.style.display = "block";
+              toggleBtn.innerHTML = "Toggle graph view";
+          }
+      }
+  </script>
+
     <div class="teachingMethodRectangle">
       <div class="teachingMethod">Teaching Method:
         <p class="teachingMethodText">Each module has a certain percentage of in person classes. This bar chart represent the relationship between the percentage of the in person classes and the average grade for each module. The data can be represented in table form also.</p>
@@ -34,7 +71,7 @@
         <div>
         <input class="searchBar" type="text" id="search">
         </div>
-        <button class="advancedSearchBox">Advanced Search</button>
+        <button class="advancedSearchBox">Search</button>
       </form>
     </div>
   </main>

@@ -16,32 +16,17 @@
   </header>
   <main>
     <div class="rectangle"></div>
-    <a class="home" href="{{ url_for('home') }}">In-Person classes vs Average Grade per Module</a>
+    <a class="home" href="{{ url_for('home') }}">Home</a>
     <a class="menu" href="{{ url_for('menu') }}">Menu</a>
     </div>
       <form>
         <div class="menuBox1">
-        <a style="position: absolute;
-        width: 707px;
-        height: 41px;
-        left: 614px;
-        top: 348px;
-        
-        font-family: 'Oswald';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 35px;
-        line-height: 52px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        
-        color: #FFFFFF;
-        
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" href="{{ url_for('home') }}">Homepage</a>
-        
+        <a class="menuText" style="top: 5px;" href="{{ url_for('home') }}">Homepage</a>
         </div>
-        <button class="advancedSearchBox">Advanced Search</button>
+        <div class="menuBox1" style="top: 550px">
+            <a class="menuText" style="    width: 665px;
+            height: 43px;
+            left: 58px;" href="{{ url_for('statistic') }}">In-Person classes vs Average Grade per Module</a>
       </form>
     </div>
   </main>

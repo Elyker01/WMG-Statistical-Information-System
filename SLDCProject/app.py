@@ -5,6 +5,7 @@ It contains the definition of routes and views for the application.
 
 from flask import Flask
 from flask import render_template
+import matplotlib.pyplot as plt
 
 
 
@@ -25,11 +26,42 @@ def home():
 
 @app.route('/statistic')
 def statistic():
-    return render_template('statistic.html')
+    data = [('Module 1', 60, 80), ('Module 2',40, 90), ('Module 3', 70, 85)]
+    create_chart()
+    return render_template('statistic.html', data=data)
+
 
 @app.route('/menu')
 def menu():
     return render_template('menu.html')
+
+
+def create_chart():
+    # Your data for in-person classes vs average grade
+    classes = ['Module 1', 'Module 2', 'Module 3']
+    grades = [80, 90, 85]
+    percentage = [30, 50, 70]
+    
+    # Create the chart
+    fig, ax = plt.subplots()
+    bar = ax.bar(percentage, grades)
+    ax.set_xlabel('Percentage of In-Person Classes (%)')
+    ax.set_ylabel('Average Grade (out of 100)')
+    ax.set_title('In-person Classes vs Average Grade')
+    ax.set_ylim(0, 100)
+    ax.set_xlim(0, 100)
+
+    # Add labels to the bars
+    for i, b in enumerate(bar):
+        height = b.get_height()
+        ax.annotate(classes[i],
+            xy=(b.get_x() + b.get_width()/2, height),
+            xytext=(0, 10),
+            textcoords='offset points',
+            ha='center', va='bottom')
+
+    # Save the chart to a file
+    fig.savefig(os.path.join(app.static_folder, 'chart.png'))
 
 
 
