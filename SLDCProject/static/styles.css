@@ -309,21 +309,27 @@ a.home:hover {
 
 .tableView{
     position: absolute;
-    width: 201px;
+    width: 205px;
     height: 50px;
     left: 1388px;
     top: 727px;
 
     font-family: 'Oswald';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 350;
     font-size: 30px;
     line-height: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     color: #616161;
 
+}
+
+.tableView:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .tableTitle{
@@ -633,3 +639,154 @@ table{
     left: 313px;
     top: 296px;
 }
+
+.crud{
+    position: absolute;
+    width: 133px;
+    height: 46px;
+    left: 1141px;
+    top: 315px;
+
+    background: #748EED;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.crud:hover{background-color: #748EED;}
+
+.crud:active {
+    background-color: #748EED;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.moduleLabel{
+    position: absolute;
+    width: 115px;
+    height: 16px;
+    left: 1227px;
+    top: 453px;
+
+}
+
+.moduleLabelText{
+    position: absolute;
+    width: 75px;
+    height: 22px;
+    left: 1141px;
+    top: 453px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.submitBtn{
+    position: absolute;
+    width: 160px;
+    height: 20px;
+    left: 1168px;
+    top: 533px;
+}
+
+.errorMsg{
+    position: absolute;
+    width: 233px;
+    height: 109px;
+    left: 862px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+
+}
+
+.errorMsgText{
+    position: absolute;
+    width: 204px;
+    height: 58px;
+    left: 18px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}
+
+.okErrorButton{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 49px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+
+
+.errorBox{
+    position: absolute;
+    width: 233px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+
+}
+
+.okErrorButton:hover {background-color: #e4ae42}
+
+.okErrorButton:active {
+  background-color: #e4ae42;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+  
+
+
+
