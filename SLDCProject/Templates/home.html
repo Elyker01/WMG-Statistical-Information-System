@@ -16,7 +16,7 @@
   </header>
   <main>
     <h1 class="homeTitle">WMG Statistical Information System</h1>
-      <form>
+      <form action="{{ url_for('search') }}" method="get">
         <img class="lectureSatisfactionImage" src="{{ url_for('static', filename='lectureSatisfaction.svg') }}" alt="lectureSatisfactionImage">
         <h2 class="lectureSatisfaction">Lecture Satisfaction</h2>
         <div>
@@ -26,7 +26,7 @@
     height: 59px;
         left: 525px;
         top: 540px; box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;" type="text" id="search">
+    border-radius: 5px;" type="text" id="search" name="search">
         <button class="advancedSearchBoxHome">
           <p style="height: 11px; font-family: 'Oswald';
           font-style: normal;
@@ -35,7 +35,7 @@
           line-height: 39px;
           display: flex;
           align-items: center;
-          justify-content: center;">Advanced Search</p>
+          justify-content: center;">Search</p>
         </button>
         <div class="stat1">
           <p style="text-shadow: 2px 2px black;">72% of students were satisfied or above in Post Module Review.</p>
@@ -47,7 +47,7 @@
           <p style="text-shadow: 2px 2px black;">81% of students achieved a 1st in the 2021/2022 academic year.</p>
         </div>
         <div class="stat4">
-            <a style="text-shadow: 2px 2px black; color:#FFFFFF" href="{{ url_for('statistic') }}">See top statistic from this month></a>        </div>
+            <a style="text-shadow: 2px 2px black; color:#FFFFFF" href="{{ url_for('inPersonClasses2019') }}">See top statistic from this month></a>        </div>
       </form>
     </div>
   </main>

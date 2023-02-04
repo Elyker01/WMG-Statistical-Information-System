@@ -155,13 +155,13 @@ h1 {
 
 .searchBar{
     position: absolute;
-    width: 580px;
-    height: 59px;
+    width: 402px;
+    height: 53.5px;
     left: -1150px;
-    top: -22px;
+    top: -19px;
 
     background: #F0F0F0;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 5px;
 }
 
@@ -176,9 +176,8 @@ h1 {
     top: -19px;
 
     background: #EDC474;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 5px;
-
     font-family: 'Oswald';
     font-style: normal;
     font-weight: 400;
@@ -186,6 +185,7 @@ h1 {
     line-height: 37px;
     display: flex;
     align-items: center;
+    JUSTIFY-CONTENT: center;
 }
 
 .searchKeywordText{
@@ -275,6 +275,10 @@ justify-content: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.home:active{
+    transform: translateY(2px);
+}
+
 a.home {
     text-decoration: none;
     color: white;
@@ -290,7 +294,7 @@ a.home:hover {
     width: 90px;
     height: 44px;
     left: 594px;
-    top: 51px;
+    top: 51px;  
 
     font-family: 'Oswald';
     font-style: normal;
@@ -299,12 +303,14 @@ a.home:hover {
     line-height: 67px;
     display: flex;
     align-items: center;
-
+    text-decoration: initial;
     color: #FFFFFF;
-
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.menu:active{
+    transform: translateY(2px);
+}
 
 
 .tableView{
@@ -412,7 +418,7 @@ form {
     display: flex;
 }
 
-.searchlabel, .searchBar, .advancedSearchBox {
+/* .searchlabel, .searchBar, .advancedSearchBox {
     display: inline-block;
 }
 
@@ -421,7 +427,7 @@ form {
 .searchlabel,.searchBar,.advancedSearchBox{
     height: 59px;
     line-height: 59px;
-}
+} */
 
 .homeTitle{
     position: absolute;
@@ -529,6 +535,10 @@ form {
     padding: 10px;
 }
 
+.stat4:active{
+    transform: translateY(2px);
+}
+
 .lectureSatisfaction{
     position: absolute;
     width: 219px;
@@ -563,14 +573,32 @@ form {
 .advancedSearchBoxHome{
     position: absolute;
     width: 213px;
-    height: 64px;
+    height: 65px;
     left: 900px;
     top: 540px;
-
+    
     background: #EDC474;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
     border-radius: 5px;
 
+}
+
+.advancedSearchBoxHome:hover{
+    background-color: #e4ae42
+}
+
+.advancedSearchBoxHome:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.advancedSearchBox:hover{
+    background-color: #e4ae42
+}
+
+.advancedSearchBox:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
 
 .menuBox1{
@@ -607,6 +635,10 @@ form {
     text-align: center;
     color: #FFFFFF;
     text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.menuText:active{
+    transform: translateY(2px);
 }
 
 td, th {
@@ -777,7 +809,9 @@ table{
 
 }
 
-.okErrorButton:hover {background-color: #e4ae42}
+.okErrorButton:hover {
+    background-color: #e4ae42
+}
 
 .okErrorButton:active {
   background-color: #e4ae42;
@@ -786,7 +820,48 @@ table{
 }
 
 
-  
+.yearsBtn{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    left: 62px;
+    top: 309px;
 
+    background: #7c57c7;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.yearsBtn:hover{
+    background-color: #6739c4;
+}
+
+.yearsBtn:active{
+    background-color: #6739c4;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.searchBarHome{
+    position: absolute;
+    width: 368px;
+    height: 59px;
+    left: 525px;
+    top: 540px;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
 
 

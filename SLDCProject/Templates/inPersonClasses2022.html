@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WMGSIS In-Person Classes vs Average Grade</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body onload="refreshChart()">
+    <header>
+        <img class="wmgLogo" src="{{ url_for('static', filename='wmg.png') }}" alt="wmg">
+        <img class="warwickUni" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
+        <img class="greyRectangle" src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
+        <nav>
+            <a class="home" href="{{ url_for('home') }}">Home</a>
+            <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+        </nav>
+    </header>
+    <main>
+        <div class="rectangle"></div>
+        <div class="errorMsg" id="errorModuleNotExistsMessage" style="display: none;">
+          <button class="okErrorButton" id="acceptError">OK</button>
+          <div class="errorBox"></div>
+          <p class="errorMsgText">Error: Module doesn't exist</p>
+          {% if error %}
+          <script>
+            document.getElementById("errorModuleNotExistsMessage").style.display = "block";
+          </script>
+        {% endif %}
+        <script>
+          document.getElementById("acceptError").addEventListener("click", function() {
+            document.getElementById("errorModuleNotExistsMessage").style.display = "none";
+          });
+        </script>
+        </div>
+        
+
+        
+        
+        <h1 class="tableTitleText">In person Classes vs Average Grade 2022</h1>
+        <img class="chart" id="chartImg" src="{{ url_for('static', filename='chart2022.png') }}?t={{ timestamp }}" alt="Percentage of In-person Classes vs Average Grade per Module Chart">
+        
+        <button class="crud" id="insertDataBtn" onclick="showInsertForm()">Insert Data</div>
+        <button class="crud" id="backBtn" type="button" class="btn btn-secondary" onclick="toggleInsertForm()" style="display:none;">Back</button>
+
+          <button class="crud" id="deleteBtn" onclick="showDeleteForm()" type="button"style="top:425px">Delete Data</button>
+          <button class="crud" id="backDeleteBtn" type="button" class="btn btn-secondary" onclick="toggleDeleteForm()" style="display:none;">Back</button>
+          
+          <button class="crud" id="updateBtn" onclick="showUpdateForm()" type="button" style="top:525px">Update Data</button>
+          <button class="crud" id="backUpdateBtn" type="button" class="btn btn-secondary" onclick="toggleUpdateForm()" style="display:none;">Back</button>
+          
+          <button class="crud" id="clearBtn" onclick="showClearData()" type="button" style="top:625px">Clear all Data</button>
+          <button class="crud" id="backClearBtn" type="button" class="btn btn-secondary" onclick="toggleClearData()" style="display:none;">Back</button>
+
+        
+
+          
+          
+        <table class="chart" id="dataTable" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Module</th>
+                    <th>Percentage of In-person Classes</th>
+                    <th>Average Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for module, percent, grade in data %}
+                <tr>
+                    <td>{{ module }}</td>
+                    <td>{{ percent }}</td>
+                    <td>{{ grade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button class="tableView" id="toggleBtn" onclick="toggleView()">Toggle table view</button>
+<!--This method here will toggle between the graph and chart view-->
+        <script>
+            function toggleView() {
+                let chartImg = document.getElementById("chartImg");
+                let dataTable = document.getElementById("dataTable");
+                let toggleBtn = document.getElementById("toggleBtn");
+
+                if (chartImg.style.display === "none") {
+                    chartImg.style.display = "block";
+                    dataTable.style.display = "none";
+                    toggleBtn.innerHTML = "Toggle table view";
+                } else {
+                    chartImg.style.display = "none";
+                    dataTable.style.display = "block";
+                    toggleBtn.innerHTML = "Toggle graph view";
+                }
+            }
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- This method here refreshes the chart.png image so it reflects the chart with the inserted data. -->
+        <script>
+          function refreshChart() {
+          document.getElementById("chartImg").src = "{{ url_for('static', filename='chart2022.png') }}?" + new Date().getTime();
+  }
+        </script>
+
+<!-- Form to Insert Data into the database which will then reflect on the graph and table -->
+        <form action="/addData2022" method="post" id="insertDataForm" style="display:none;">
+            <div class="form-group">
+                <label class="moduleLabelText" for="module">Module:</label>
+                <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
+            </div>
+            <div class="form-group">
+                <label class="moduleLabelText" style="top:479px" for="grade">Grade:</label>
+                <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="1" max="100">
+            </div>
+            <div class="form-group">
+                <label class="moduleLabelText" style="top:505px; font-size:15px;" for="percentage">Percentage:</label>
+                <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="1" max="100">
+            </div>
+            <button class="submitBtn" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
+        </form>
+
+        <script>
+          function showInsertForm() {
+            var form = document.getElementById("insertDataForm");
+            var insertDataBtn = document.getElementById("insertDataBtn");
+            var updateBtn = document.getElementById("updateBtn");
+            var deleteBtn = document.getElementById("deleteBtn");
+            var clearBtn = document.getElementById("clearBtn");
+            var backBtn = document.getElementById("backBtn");
+
+            if (form.style.display === "none") {
+              form.style.display = "block";
+              insertDataBtn.style.display= "none";
+              updateBtn.style.display= "none";
+              deleteBtn.style.display= "none";
+              clearBtn.style.display= "none";
+              backBtn.style.display = "block";
+
+            } else {
+              form.style.display = "none";
+            }
+          }
+        </script>
+
+        
+        <script>
+          function toggleInsertForm() {
+            var form = document.getElementById("insertDataForm");
+            var backBtn = document.getElementById("backBtn");
+            var insertDataBtn = document.getElementById("insertDataBtn");
+            var updateBtn = document.getElementById("updateBtn");
+            var deleteBtn = document.getElementById("deleteBtn");
+            var clearBtn = document.getElementById("clearBtn");
+            
+            form.style.display ="none";
+            backBtn.style.display = "none"
+            insertDataBtn.style.display= "block";
+            updateBtn.style.display= "block";
+            deleteBtn.style.display= "block";
+            clearBtn.style.display= "block";
+          }
+        </script>
+
+
+<!-- Form to Delete Module into the database which will then reflect on the graph and table -->
+        <form action="{{ url_for('deleteModule2022') }}" method="post" id="deleteDataForm" style="display:none;">
+          <div class="form-group">
+              <label class="moduleLabelText" for="module">Module:</label>
+              <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
+          </div>
+          <div class="form-group">
+            <label class="moduleLabelText" style="top:479px; display:none;" for="grade">Grade:</label>
+            <input class="moduleLabel" style="top:479px; display:none;" class="form-control" id="grade" name="grade">
+        </div>
+        <div class="form-group">
+            <label class="moduleLabelText" style="top:505px; font-size:15px; display:none;" for="percentage">Percentage:</label>
+            <input class="moduleLabel" style="top:505px; display:none;" class="form-control" id="percentage" name="percentage">
+        </div>
+          <button class="submitBtn" style="top:483px" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
+      </form>
+
+      <script>
+        function showDeleteForm() {
+          var form = document.getElementById("deleteDataForm");
+          var insertDataBtn = document.getElementById("insertDataBtn");
+          var updateBtn = document.getElementById("updateBtn");
+          var deleteBtn = document.getElementById("deleteBtn");
+          var clearBtn = document.getElementById("clearBtn");
+          var backBtn = document.getElementById("backDeleteBtn");
+
+          if (form.style.display === "none") {
+            form.style.display = "block";
+            insertDataBtn.style.display= "none";
+            updateBtn.style.display= "none";
+            deleteBtn.style.display= "none";
+            clearBtn.style.display= "none";
+            backBtn.style.display = "block";
+
+          } else {
+            form.style.display = "none";
+          }
+        }
+      </script>
+
+
+
+      <script>
+        function toggleDeleteForm() {
+          var form = document.getElementById("deleteDataForm");
+          var backBtn = document.getElementById("backDeleteBtn");
+          var insertDataBtn = document.getElementById("insertDataBtn");
+          var updateBtn = document.getElementById("updateBtn");
+          var deleteBtn = document.getElementById("deleteBtn");
+          var clearBtn = document.getElementById("clearBtn");
+          
+          form.style.display ="none";
+          backBtn.style.display = "none"
+          insertDataBtn.style.display= "block";
+          updateBtn.style.display= "block";
+          deleteBtn.style.display= "block";
+          clearBtn.style.display= "block";
+        }
+      </script>
+
+<!-- Form to Update Data into the database which will then reflect on the graph and table -->
+      <form action="{{ url_for('updateData2022') }}" method="post" id="updateDataForm" style="display:none;">
+        <div class="form-group">
+            <label class="moduleLabelText" for="module">Module:</label>
+            <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
+        </div>
+        <div class="form-group">
+            <label class="moduleLabelText" style="top:479px" for="grade">Grade:</label>
+            <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="1" max="100">
+        </div>
+        <div class="form-group">
+            <label class="moduleLabelText" style="top:505px; font-size:15px;" for="percentage">Percentage:</label>
+            <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="1" max="100">
+        </div>
+        <button class="submitBtn" class="moduleLabel" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
+    </form>
+      
+   
+
+    <script>
+      function showUpdateForm() {
+        var form = document.getElementById("updateDataForm");
+        var insertDataBtn = document.getElementById("insertDataBtn");
+        var updateBtn = document.getElementById("updateBtn");
+        var deleteBtn = document.getElementById("deleteBtn");
+        var clearBtn = document.getElementById("clearBtn");
+        var backBtn = document.getElementById("backUpdateBtn");
+
+        if (form.style.display === "none") {
+          form.style.display = "block";
+          insertDataBtn.style.display= "none";
+          updateBtn.style.display= "none";
+          deleteBtn.style.display= "none";
+          clearBtn.style.display= "none";
+          backBtn.style.display = "block";
+
+        } else {
+          form.style.display = "none";
+        }
+      }
+    </script>
+
+
+
+    <script>
+      function toggleUpdateForm() {
+        var form = document.getElementById("updateDataForm");
+        var backBtn = document.getElementById("backUpdateBtn");
+        var insertDataBtn = document.getElementById("insertDataBtn");
+        var updateBtn = document.getElementById("updateBtn");
+        var deleteBtn = document.getElementById("deleteBtn");
+        var clearBtn = document.getElementById("clearBtn");
+        
+        form.style.display ="none";
+        backBtn.style.display = "none"
+        insertDataBtn.style.display= "block";
+        updateBtn.style.display= "block";
+        deleteBtn.style.display= "block";
+        clearBtn.style.display= "block";
+      }
+    </script>
+    
+    <!-- Form to Clear Data into the database which will then reflect on the graph and table -->
+     <form action="{{ url_for('deleteData2022') }}" method="post" id="clearDataForm" style="display:none;">
+      <div class="form-group">
+        <label class="moduleLabelText" for="module" style="width: 111px;
+        height: 22px;
+        left: 1192px;
+        top: 502px;">Are you sure?:</label>
+    </div>
+      <button class="submitBtn" class="moduleLabel" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
+  </form>
+
+  <script>
+    function showClearData() {
+      var form = document.getElementById("clearDataForm");
+      var insertDataBtn = document.getElementById("insertDataBtn");
+      var updateBtn = document.getElementById("updateBtn");
+      var deleteBtn = document.getElementById("deleteBtn");
+      var clearBtn = document.getElementById("clearBtn");
+      var backBtn = document.getElementById("backClearBtn");
+
+      if (form.style.display === "none") {
+        form.style.display = "block";
+        insertDataBtn.style.display= "none";
+        updateBtn.style.display= "none";
+        deleteBtn.style.display= "none";
+        clearBtn.style.display= "none";
+        backBtn.style.display = "block";
+
+      } else {
+        form.style.display = "none";
+      }
+    }
+  </script>
+
+
+
+  <script>
+    function toggleClearData() {
+      var form = document.getElementById("clearDataForm");
+      var backBtn = document.getElementById("backClearBtn");
+      var insertDataBtn = document.getElementById("insertDataBtn");
+      var updateBtn = document.getElementById("updateBtn");
+      var deleteBtn = document.getElementById("deleteBtn");
+      var clearBtn = document.getElementById("clearBtn");
+      
+      form.style.display ="none";
+      backBtn.style.display = "none"
+      insertDataBtn.style.display= "block";
+      updateBtn.style.display= "block";
+      deleteBtn.style.display= "block";
+      clearBtn.style.display= "block";
+    }
+  </script>
+
+        <div class="teachingMethodRectangle">
+            <div class="teachingMethod">
+                Teaching Method:
+                <p class="teachingMethodText">Each module has a certain percentage of in person classes. This bar chart represent the relationship between the percentage of the in person classes and the average grade for each module. The data can be represented in table form also.</p>
+
+                <p class="viewData">View data per academic year:</p>
+                <div class="yearsBtnGroup">
+                    <button class="yearsBtn" onclick="window.location='inPersonClasses2019'">2019</button>
+                    <button class="yearsBtn" onclick="window.location='inPersonClasses2020'" style="top: 344px;">2020</button>
+                    <button class="yearsBtn" onclick="window.location='inPersonClasses2021'" style="top: 379px;">2021</button>
+                    <button class="yearsBtn" onclick="window.location='inPersonClasses2022'" style="top: 414px;">2022</button>
+                </div>
+            </div>
+            <form action="{{ url_for('search') }}" method="get">
+                <div>
+                    <input class="searchBar" type="text" id="search" name="search">
+                </div>
+                <button class="advancedSearchBox">Search</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="rectangleBottom">
+            <p style="font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;color: #FFFFFF;">Contact WMG at help@wmgcustomerservice.com</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
