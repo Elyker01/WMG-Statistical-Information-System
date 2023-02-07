@@ -228,13 +228,6 @@ h1 {
     color: #FFFFFF;
 }
 
-.magnifyingGlass{
-    position: absolute;
-    width: 27px;
-    height: 100px;
-    left: 610px;
-    top: -50px;
-}
 
 .years{
   position: absolute;
@@ -618,6 +611,7 @@ form {
     height: 550px;
     left: 313px;
     top: 296px;
+    overflow-y: auto
 }
 
 .menuText{
@@ -754,6 +748,8 @@ table{
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
     z-index: 999;
+    border: 2px solid #000000;
+
 
 }
 
@@ -819,6 +815,16 @@ table{
   transform: translateY(4px);
 }
 
+.okErrorButtonEmpty:hover {
+    background-color: #e4ae42
+}
+
+.okErrorButtonEmpty:active {
+  background-color: #e4ae42;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 
 .yearsBtn{
     position: absolute;
@@ -864,4 +870,255 @@ table{
     border-radius: 5px;
 }
 
+
+.errorWhitespaceMsg{
+    position: absolute;
+    width: 274px;
+    height: 109px;
+    left: 838px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    border: 2px solid #000000;
+    
+}
+
+.okErrorButtonEmpty{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 71px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.errorBoxEmpty{
+    position: absolute;
+    width: 274px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+}
+
+.errorMsgTextEmpty{
+    position: absolute;
+    width: 258px;
+    height: 58px;
+    left: 12px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}
+
+.loginButton{
+    position: absolute;
+    width: 143px;
+    height: 47px;
+    left: 1698px;
+    top: 76px;
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: center;
+}
+
+.loginButton:hover{
+    background-color: #e4ae42
+}
+
+.loginButton:active{
+    background-color: #e4ae42;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.welcome{
+    position: absolute;
+    width: 90px;
+    height: 44px;
+    left: 1715px;
+    top: 29px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+    text-decoration: initial;
+    color: #000000;
+    text-shadow: 2px 2px white;
+}
+
+.userIcon{
+    
+    position: absolute;
+    left: 14.43%;
+    right: 67.19%;
+    top: 24.37%;
+    bottom: 33.15%;
+}
+
+.signInText{
+    position: absolute;
+    left: 57.5%;
+    right: 52.07%;
+    width: 100px;
+    top: 26.94%;
+    bottom: 65.63%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 450;
+    font-size: 25px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailLabel{
+    position: absolute;
+    left: 62.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 46.35%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 26px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.emailLabel{
+    position: absolute;
+    left: 44.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 46.35%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 26px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.passwordLabel{
+    position: absolute;
+    left: 44.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 56%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.passwordInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 30px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.signInButton{
+    position: absolute;
+    width: 145px;
+    height: 41px;
+    left: 1225px;
+    top: 636px;
+    background: #EDC473;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.signInButton:hover{
+    background-color: #e4ae42
+}
+
+.signInButton:active{
+    background-color: #e4ae42;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 

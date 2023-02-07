@@ -12,6 +12,26 @@
     <nav>
       <a class="home" href="{{ url_for('home') }}">Home</a>
       <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+      
+      <!-- Checks if tutor or student is logged in and if so,
+      show the logout button and if not, show the login button -->
+      {% if session == "Tutor" %}
+          <button class="loginButton" onclick="window.location='logout'">Logout</button>
+          <a class="welcome" style=" 
+          width: 180px;
+          height: 44px;
+          left: 1688px;
+          top: 29px;">Welcome Tutor!</a>
+      {% elif session == "Student" %}
+        <button class="loginButton" onclick="window.location='logout'">Logout</button>
+        <a class="welcome" style="width: 204px;
+        height: 44px;
+        left: 1676px;
+        top: 29px;">Welcome Student!</a>
+      {% elif session != "Student" or session != "Tutor"%}
+        <a class="welcome">Welcome!</a>
+        <button class="loginButton" onclick="window.location='login'">Login</button>
+      {% endif %}
     </nav>
   </header>
   <main>

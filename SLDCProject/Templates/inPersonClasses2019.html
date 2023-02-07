@@ -12,12 +12,31 @@
         <nav>
             <a class="home" href="{{ url_for('home') }}">Home</a>
             <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+
+            <!-- Checks if tutor or student is logged in and if so,
+            show the logout button and if not, show the login button -->
+            {% if session == "Tutor" %}
+              <button class="loginButton" onclick="window.location='logout'">Logout</button>
+              <a class="welcome" style=" 
+              width: 180px;
+              height: 44px;
+              left: 1741px;
+              top: 43px; font-size: 10px;">Admin Session</a>
+            {% elif session == "Student" %}
+              <button class="loginButton" onclick="window.location='logout'">Logout</button>
+              <a class="welcome" style="width: 180px;
+              height: 44px;
+              left: 1738px;
+              top: 43px; font-size: 10px;">Student Session</a>
+            {% elif session != "Student" or session != "Tutor" %}
+              <button class="loginButton" onclick="window.location='login'">Login</button>
+            {% endif %}
         </nav>
     </header>
     <main>
         <div class="rectangle"></div>
         <div class="errorMsg" id="errorModuleNotExistsMessage" style="display: none;">
-          <button class="okErrorButton" id="acceptError">OK</button>
+          <button class="okErrorButton" id="acceptModuleNotExistError">OK</button>
           <div class="errorBox"></div>
           <p class="errorMsgText">Error: Module doesn't exist</p>
           {% if error %}
@@ -26,8 +45,25 @@
           </script>
         {% endif %}
         <script>
-          document.getElementById("acceptError").addEventListener("click", function() {
+          document.getElementById("acceptModuleNotExistError").addEventListener("click", function() {
             document.getElementById("errorModuleNotExistsMessage").style.display = "none";
+          });
+        </script>
+        </div>
+
+
+        <div class="errorWhitespaceMsg" id="errorModuleEmptyMessage" style="display: none;">
+          <button class="okErrorButtonEmpty" id="acceptErrorEmpty">OK</button>
+          <div class="errorBoxEmpty"></div>
+          <p class="errorMsgTextEmpty">Error: Please enter a Module Name</p>
+          {% if whiteSpaceError %}
+          <script>
+            document.getElementById("errorModuleEmptyMessage").style.display = "block";
+          </script>
+        {% endif %}
+        <script>
+          document.getElementById("acceptErrorEmpty").addEventListener("click", function() {
+            document.getElementById("errorModuleEmptyMessage").style.display = "none";
           });
         </script>
         </div>
@@ -38,18 +74,19 @@
         <h1 class="tableTitleText">In person Classes vs Average Grade 2019</h1>
         <img class="chart" id="chartImg" src="{{ url_for('static', filename='chart2019.png') }}?t={{ timestamp }}" alt="Percentage of In-person Classes vs Average Grade per Module Chart">
         
-        <button class="crud" id="insertDataBtn" onclick="showInsertForm()">Insert Data</div>
-        <button class="crud" id="backBtn" type="button" class="btn btn-secondary" onclick="toggleInsertForm()" style="display:none;">Back</button>
+        {% if session == "Tutor" %}
+          <button class="crud" id="insertDataBtn" onclick="showInsertForm()">Insert Data</div>
+          <button class="crud" id="backBtn" type="button" class="btn btn-secondary" onclick="toggleInsertForm()" style="display:none;">Back</button>
 
-          <button class="crud" id="deleteBtn" onclick="showDeleteForm()" type="button"style="top:425px">Delete Data</button>
-          <button class="crud" id="backDeleteBtn" type="button" class="btn btn-secondary" onclick="toggleDeleteForm()" style="display:none;">Back</button>
-          
-          <button class="crud" id="updateBtn" onclick="showUpdateForm()" type="button" style="top:525px">Update Data</button>
-          <button class="crud" id="backUpdateBtn" type="button" class="btn btn-secondary" onclick="toggleUpdateForm()" style="display:none;">Back</button>
-          
-          <button class="crud" id="clearBtn" onclick="showClearData()" type="button" style="top:625px">Clear all Data</button>
-          <button class="crud" id="backClearBtn" type="button" class="btn btn-secondary" onclick="toggleClearData()" style="display:none;">Back</button>
-
+            <button class="crud" id="deleteBtn" onclick="showDeleteForm()" type="button"style="top:425px">Delete Data</button>
+            <button class="crud" id="backDeleteBtn" type="button" class="btn btn-secondary" onclick="toggleDeleteForm()" style="display:none;">Back</button>
+            
+            <button class="crud" id="updateBtn" onclick="showUpdateForm()" type="button" style="top:525px">Update Data</button>
+            <button class="crud" id="backUpdateBtn" type="button" class="btn btn-secondary" onclick="toggleUpdateForm()" style="display:none;">Back</button>
+            
+            <button class="crud" id="clearBtn" onclick="showClearData()" type="button" style="top:625px">Clear all Data</button>
+            <button class="crud" id="backClearBtn" type="button" class="btn btn-secondary" onclick="toggleClearData()" style="display:none;">Back</button>
+        {% endif %}
         
 
           
@@ -101,23 +138,29 @@
   }
         </script>
 
+        
+        
+        
+
 <!-- Form to Insert Data into the database which will then reflect on the graph and table -->
         <form action="/addData2019" method="post" id="insertDataForm" style="display:none;">
             <div class="form-group">
                 <label class="moduleLabelText" for="module">Module:</label>
-                <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
+                <input class="moduleLabel" type="text" class="form-control" id="module" name="module" required>
             </div>
             <div class="form-group">
                 <label class="moduleLabelText" style="top:479px" for="grade">Grade:</label>
-                <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="1" max="100">
+                <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="0" max="100" required>
             </div>
             <div class="form-group">
                 <label class="moduleLabelText" style="top:505px; font-size:15px;" for="percentage">Percentage:</label>
-                <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="1" max="100">
+                <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="0" max="100" required>
             </div>
             <button class="submitBtn" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
         </form>
 
+
+        <!-- Method to display form to insert module, grade and percentage -->
         <script>
           function showInsertForm() {
             var form = document.getElementById("insertDataForm");
@@ -143,6 +186,8 @@
 
         
         <script>
+          // This method is used to set the display back to none for the insert form
+          // if the user clicks the "Back" button
           function toggleInsertForm() {
             var form = document.getElementById("insertDataForm");
             var backBtn = document.getElementById("backBtn");
@@ -159,6 +204,8 @@
             clearBtn.style.display= "block";
           }
         </script>
+
+        
 
 
 <!-- Form to Delete Module into the database which will then reflect on the graph and table -->
@@ -178,6 +225,7 @@
           <button class="submitBtn" style="top:483px" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
       </form>
 
+      <!-- Method to display form to delete module-->
       <script>
         function showDeleteForm() {
           var form = document.getElementById("deleteDataForm");
@@ -202,7 +250,8 @@
       </script>
 
 
-
+      <!--This method is used to set the display back to none for the delete form
+        if the user clicks the "Back" button -->
       <script>
         function toggleDeleteForm() {
           var form = document.getElementById("deleteDataForm");
@@ -229,17 +278,17 @@
         </div>
         <div class="form-group">
             <label class="moduleLabelText" style="top:479px" for="grade">Grade:</label>
-            <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="1" max="100">
+            <input class="moduleLabel" style="top:479px" type="number" class="form-control" id="grade" name="grade" min="0" max="100">
         </div>
         <div class="form-group">
             <label class="moduleLabelText" style="top:505px; font-size:15px;" for="percentage">Percentage:</label>
-            <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="1" max="100">
+            <input class="moduleLabel" style="top:505px" type="number" class="form-control" id="percentage" name="percentage" min="0" max="100">
         </div>
         <button class="submitBtn" class="moduleLabel" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
     </form>
       
    
-
+    <!-- Method to display form to update module data-->
     <script>
       function showUpdateForm() {
         var form = document.getElementById("updateDataForm");
@@ -264,7 +313,8 @@
     </script>
 
 
-
+    <!--This method is used to set the display back to none for the update form
+        if the user clicks the "Back" button -->
     <script>
       function toggleUpdateForm() {
         var form = document.getElementById("updateDataForm");
@@ -294,6 +344,7 @@
       <button class="submitBtn" class="moduleLabel" type="submit" class="btn btn-primary" onclick="refreshChart()">Submit</button>
   </form>
 
+  <!-- Method to display form to clear all data-->
   <script>
     function showClearData() {
       var form = document.getElementById("clearDataForm");
@@ -318,7 +369,8 @@
   </script>
 
 
-
+  <!--This method is used to set the display back to none for the clear data form
+    if the user clicks the "Back" button -->
   <script>
     function toggleClearData() {
       var form = document.getElementById("clearDataForm");

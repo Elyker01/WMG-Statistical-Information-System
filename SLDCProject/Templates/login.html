@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WMGSIS In-Person Classes vs Average Grade</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <img class="wmgLogo" src="{{ url_for('static', filename='wmg.png') }}" alt="wmg">
+    <img class="warwickUni" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
+    <img class="greyRectangle"src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
+    <nav>
+      <a class="home" href="{{ url_for('home') }}">Home</a>
+      <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+      <button class="loginButton" onclick="window.location='login'">Login</button>
+    </nav>
+  </header>
+  <main>
+    <div class="rectangle">
+        <img class="userIcon" src="{{ url_for('static', filename='user icon.svg') }}" alt="user icon">
+        <a class="signInText">Sign In</a>
+    </div>
+    <div class="errorMsg" id="errorWrongLogin" style="display: none;">
+      <button class="okErrorButton" id="acceptError">OK</button>
+      <div class="errorBox"></div>
+      <p class="errorMsgText">Error: Incorrect E-Mail and/or password</p>
+      <!-- If the email and/or password is incorrect
+      it will display an error stating that. -->
+      {% if loginError %}
+      <script>
+        document.getElementById("errorWrongLogin").style.display = "block";
+      </script>
+    {% endif %}
+    <script>
+      document.getElementById("acceptError").addEventListener("click", function() {
+        document.getElementById("errorWrongLogin").style.display = "none";
+      });
+    </script>
+    </div>
+
+      <form action="/signIn" method="post">
+        <label class="emailLabel">E-Mail
+            <input class="emailInput" name="email">
+        </label>
+        <label class="passwordLabel">Password
+            <input class="passwordInput" name="password" type="password">
+        </label>
+        <button class="signInButton">Sign In</button>
+      </form>
+
+  </main>
+  <footer>
+    <div class="rectangleBottom">
+    <p style="font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;color: #FFFFFF;">Contact WMG at help@wmgcustomerservice.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
