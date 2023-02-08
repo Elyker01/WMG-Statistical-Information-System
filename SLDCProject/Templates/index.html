@@ -40,7 +40,7 @@
         <img class="lectureSatisfactionImage" src="{{ url_for('static', filename='lectureSatisfaction.svg') }}" alt="lectureSatisfactionImage">
         <h2 class="lectureSatisfaction">Lecture Satisfaction</h2>
         <div>
-        <input class="searchBarHome" type="text" id="search" name="search">
+        <input class="searchBarHome" type="text" id="search" name="search" placeholder="'E.g. Menu'">
         <button class="advancedSearchBoxHome">
           <p style="height: 11px; font-family: 'Oswald';
           font-style: normal;
@@ -61,8 +61,8 @@
         <div class="stat3">
           <p style="text-shadow: 2px 2px black;">81% of students achieved a 1st in the 2021/2022 academic year.</p>
         </div>
-        <div class="stat4">
-          <a style="text-shadow: 2px 2px black; color:#FFFFFF" href="{{ url_for('inPersonClasses2019') }}">See top statistic from this month></a>
+        <div class="topMonthStatistic">
+          <a style="text-shadow: 2px 2px black; color:#FFFFFF; text-decoration: initial;"  href="{{ url_for('inPersonClasses2022') }}">See the top statistic from this month -></a>
         </div>
       </form>
     </div>

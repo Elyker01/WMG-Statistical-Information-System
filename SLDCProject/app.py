@@ -239,14 +239,24 @@ def inPersonClasses2022():
 @app.route('/search', methods=['GET'])
 def search():
     #Create a list which contains the different parts of the website which the user can search for
-    pageNames = ['inPersonClasses2019', 'inPersonClasses2020','inPersonClasses2021','inPersonClasses2022', menu, home]
-    search_query = request.args.get('search').lower()
+    pageNames = ['inPersonClasses2019', 'inPersonClasses2020','inPersonClasses2021','inPersonClasses2022','menu','home','login']
+    searchQuery = request.args.get('search').lower()
     #Loop through list and check if what user has input matches with any of the elements in it.
     for page in pageNames:
-        if search_query.replace(" ","") in page.lower():
+        if searchQuery.replace(" ","") in page.lower() and searchQuery.strip() != "":
             return redirect(url_for(page))
-            
-    return "No matching page found. Please try again."
+        
+
+
+    #If what the user has input doesn't match with any of the page names
+    #a pop-up window will appear telling them that the page doesn't exist
+    #and redirects them back to the previous page.
+    return """
+    <script>
+        alert("The page you've entered does not exist. Please ensure you use correct spelling.");
+        window.history.back();
+    </script>
+    """
 
 
 
