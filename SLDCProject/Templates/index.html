@@ -10,8 +10,8 @@
     <img class="warwickUniHome" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
     <img class="greyRectangle"src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
     <nav>
-      <a class="home" href="{{ url_for('home') }}">Home</a>
-      <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+      <a class="home" href="{{ url_for('viewsBP.home') }}">Home</a>
+      <a class="menu" href="{{ url_for('viewsBP.menu') }}">Menu</a>
       
       <!-- Checks if tutor or student is logged in and if so,
       show the logout button and if not, show the login button -->
@@ -36,7 +36,7 @@
   </header>
   <main>
     <h1 class="homeTitle">WMG Statistical Information System</h1>
-      <form action="{{ url_for('search') }}" method="get">
+      <form action="{{ url_for('routesBP.search') }}" method="get">
         <img class="lectureSatisfactionImage" src="{{ url_for('static', filename='lectureSatisfaction.svg') }}" alt="lectureSatisfactionImage">
         <h2 class="lectureSatisfaction">Lecture Satisfaction</h2>
         <div>
@@ -62,7 +62,7 @@
           <p style="text-shadow: 2px 2px black;">81% of students achieved a 1st in the 2021/2022 academic year.</p>
         </div>
         <div class="topMonthStatistic">
-          <a style="text-shadow: 2px 2px black; color:#FFFFFF; text-decoration: initial;"  href="{{ url_for('inPersonClasses2022') }}">See the top statistic from this month -></a>
+          <a style="text-shadow: 2px 2px black; color:#FFFFFF; text-decoration: initial;"  href="{{ url_for('viewsBP.inPersonClasses2022') }}">See the top statistic from this month -></a>
         </div>
       </form>
     </div>

@@ -1124,3 +1124,63 @@ table{
     transform: translateY(4px);
 }
 
+
+.errorMsgLogin{
+    position: absolute;
+    width: 310px;
+    height: 109px;
+    left: 862px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    border: 2px solid #000000;
+}
+
+.okErrorButtonLogin{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 85px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.errorBoxLogin{
+    position: absolute;
+    width: 310px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+}
+
+.errorMsgTextLogin{
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    left: 13px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}
