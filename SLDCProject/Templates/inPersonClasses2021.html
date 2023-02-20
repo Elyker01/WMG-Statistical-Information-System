@@ -10,8 +10,8 @@
         <img class="warwickUni" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
         <img class="greyRectangle" src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
         <nav>
-            <a class="home" href="{{ url_for('viewsBP.home') }}">Home</a>
-            <a class="menu" href="{{ url_for('viewsBP.menu') }}">Menu</a>
+            <a class="home" href="{{ url_for('home') }}">Home</a>
+            <a class="menu" href="{{ url_for('menu') }}">Menu</a>
 
             <!-- Checks if tutor or student is logged in and if so,
             show the logout button and if not, show the login button -->
@@ -66,6 +66,22 @@
         <script>
           document.getElementById("acceptErrorEmpty").addEventListener("click", function() {
             document.getElementById("errorModuleEmptyMessage").style.display = "none";
+          });
+        </script>
+        </div>
+
+        <div class="errorWhitespaceMsg" id="errorModuleAlreadyExistsMsg" style="display: none;">
+          <button class="okErrorButtonEmpty" id="acceptErrorAlreadyExists">OK</button>
+          <div class="errorBoxEmpty"></div>
+          <p class="errorMsgTextEmpty" style="left:32px">Error: Module already exists.</p>
+          {% if moduleExistError %}
+          <script>
+            document.getElementById("errorModuleAlreadyExistsMsg").style.display = "block";
+          </script>
+        {% endif %}
+        <script>
+          document.getElementById("acceptErrorAlreadyExists").addEventListener("click", function() {
+            document.getElementById("errorModuleAlreadyExistsMsg").style.display = "none";
           });
         </script>
         </div>
@@ -205,10 +221,10 @@
 
 
 <!-- Form to Delete Module into the database which will then reflect on the graph and table -->
-        <form action="{{ url_for('modelsBP.deleteModule2021') }}" method="post" id="deleteDataForm" style="display:none;">
+        <form action="{{ url_for('deleteModule2021') }}" method="post" id="deleteDataForm" style="display:none;">
           <div class="form-group">
               <label class="moduleLabelText" for="module">Module:</label>
-              <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
+              <input class="moduleLabel" type="text" class="form-control" id="module" name="module" required>
           </div>
           <div class="form-group">
             <label class="moduleLabelText" style="top:479px; display:none;" for="grade">Grade:</label>
@@ -267,7 +283,7 @@
       </script>
 
 <!-- Form to Update Data into the database which will then reflect on the graph and table -->
-      <form action="{{ url_for('modelsBP.updateData2021') }}" method="post" id="updateDataForm" style="display:none;">
+      <form action="{{ url_for('updateData2021') }}" method="post" id="updateDataForm" style="display:none;">
         <div class="form-group">
             <label class="moduleLabelText" for="module">Module:</label>
             <input class="moduleLabel" type="text" class="form-control" id="module" name="module">
@@ -330,7 +346,7 @@
     </script>
     
     <!-- Form to Clear Data into the database which will then reflect on the graph and table -->
-     <form action="{{ url_for('modelsBP.deleteData2021') }}" method="post" id="clearDataForm" style="display:none;">
+     <form action="{{ url_for('deleteData2021') }}" method="post" id="clearDataForm" style="display:none;">
       <div class="form-group">
         <label class="moduleLabelText" for="module" style="width: 111px;
         height: 22px;
@@ -398,7 +414,7 @@
                     <button class="yearsBtn" onclick="window.location='inPersonClasses2022'" style="top: 414px;">2022</button>
                 </div>
             </div>
-            <form action="{{ url_for('routesBP.search') }}" method="get">
+            <form action="{{ url_for('search') }}" method="get">
                 <div>
                     <input class="searchBar" type="text" id="search" name="search" placeholder="'E.g. Home'">
                 </div>

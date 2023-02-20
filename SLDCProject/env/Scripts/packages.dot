@@ -1,0 +1,7 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"app" [color="black", label=<app>, shape="box", style="solid"];
+"routes" [color="black", label=<routes>, shape="box", style="solid"];
+"app" -> "routes" [arrowhead="open", arrowtail="none"];
+}
