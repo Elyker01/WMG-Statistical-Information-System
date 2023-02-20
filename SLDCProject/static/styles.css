@@ -1,0 +1,1186 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    text-align: center;
+}
+
+.wmgLogo {
+    position: absolute;
+    width: 416px;
+    height: 121px;
+    left: 0px;
+    top: 12px;
+}
+
+.greyRectangle{
+    position: absolute;
+    width: 1173px;
+    height: 105px;
+    left: 442px;
+    top: 16px;
+
+    background: rgba(189, 189, 189, 0.74);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    }
+
+.rectangle {
+    position: absolute;
+    width: 1491px;
+    height: 729px;
+    left: 214px;
+    top: 160px;
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+
+.background { 
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.warwickUni{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 821px;
+    left: 0px;
+    top: 149px;
+
+    background: url(warwickUni.png);
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.rectangleBottom{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 110px;
+    left: 0px;
+    top: 970px;
+
+    background: #BDBDBD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    }
+
+.teachingMethodRectangle{
+    position: absolute;
+    width: 282px;
+    height: 503px;
+    left: 1389px;   
+    top: 208px;
+
+    background: #BDACE0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.teachingMethod{
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+   
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.teachingMethodText{
+    position: absolute;
+    width: 100%;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+    
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.viewData{
+    
+    position: absolute;
+    width: 248px;
+    height: 72px;
+    left: 0px;
+    top: 230px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+}
+
+.searchBar{
+    position: absolute;
+    width: 402px;
+    height: 53.5px;
+    left: -1150px;
+    top: -19px;
+
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.advancedSearchBox{
+    /* Advanced Search Box */
+
+    
+    position: absolute;
+    width: 179px;
+    height: 59px;
+    left: -742px;
+    top: -19px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    JUSTIFY-CONTENT: center;
+}
+
+.searchKeywordText{
+
+    /* Search for Keyword(s) or by statistic ID */
+
+
+    position: absolute;
+    width: 400px;
+    height: 59px;
+    left: -1143px;
+    top: -50px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+
+    color: #78787A;
+}
+
+.advancedSearchText{
+    position: absolute;
+    width: 172px;
+    height: 59px;
+    left: -734px;
+    top: -50px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+
+.years{
+  position: absolute;
+width: 248px;
+height: 72px;
+left: 0px;
+top: 300px;
+
+font-family: 'Oswald';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 30px;
+list-style-type: square;
+justify-content: center;
+
+ 
+}
+
+.home{
+    
+    position: absolute;
+    width: 101px;
+    height: 44px;
+    left: 463px;
+    top: 51px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.home:active{
+    transform: translateY(2px);
+}
+
+a.home {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+a.home:hover {
+    color: white;
+}
+
+.menu{
+    position: absolute;
+    width: 90px;
+    height: 44px;
+    left: 594px;
+    top: 51px;  
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+    text-decoration: initial;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.menu:active{
+    transform: translateY(2px);
+}
+
+
+.tableView{
+    position: absolute;
+    width: 205px;
+    height: 50px;
+    left: 1388px;
+    top: 727px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 30px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #616161;
+
+}
+
+.tableView:active{
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.tableTitle{
+    position: absolute;
+    width: 324px;
+    height: 59px;
+    left: 942px;
+    top: 204px;
+
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.tableTitleText{
+    position: absolute;
+    width: 324px;
+    height: 59px;
+    left: 942px;
+    top: 204px;
+
+    
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.warwickUniHome{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1920px;
+    height: 507px;
+    left: 0px;
+    top: 149px;
+
+    background: url(warwickUni.png);
+    border: 1px solid #000000;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.searchKeywordTextHome{
+
+    /* Search for Keyword(s) or by statistic ID */
+
+
+    position: absolute;
+    width: 400px;
+    height: 59px;
+    left: -1143px;
+    top: -50px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+
+
+form {
+    display: flex;
+}
+
+/* .searchlabel, .searchBar, .advancedSearchBox {
+    display: inline-block;
+}
+
+
+
+.searchlabel,.searchBar,.advancedSearchBox{
+    height: 59px;
+    line-height: 59px;
+} */
+
+.homeTitle{
+    position: absolute;
+    width: 544px;
+    height: 543px;
+    left: 38px;
+    top: 53px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 85px;
+    line-height: 126px;
+    display: flex;
+    align-items: center;
+
+    color: #FFFFFF;
+}
+
+.stat1{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 35px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: #000000, 1px;
+}
+
+.stat2{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 500px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: #000000, 1px;
+}
+
+.stat3{
+    position: absolute;
+    width: 340px;
+    height: 230px;
+    left: 1000px;
+    top: 700px;
+
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.topMonthStatistic{
+    position: absolute;
+    width: 300px;
+    height: 120px;
+    left: 1492px;
+    top: 731px;
+    background: #bdace0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.topMonthStatistic:active{
+    transform: translateY(2px);
+}
+
+.topMonthStatistic:hover{
+    background-color: #9471da
+}
+
+.lectureSatisfaction{
+    position: absolute;
+    width: 219px;
+    height: 44px;
+    left: 1330px;
+    top: 177px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    
+}
+
+.lectureSatisfactionImage{
+    position: absolute;
+    width: 610px;
+    height: 422px;
+    left: 1267px;
+    top: 192px;
+    
+    background: url(image.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+}
+
+.advancedSearchBoxHome{
+    position: absolute;
+    width: 213px;
+    height: 65px;
+    left: 900px;
+    top: 540px;
+    
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+
+}
+
+.advancedSearchBoxHome:hover{
+    background-color: #e4ae42
+}
+
+.advancedSearchBoxHome:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.advancedSearchBox:hover{
+    background-color: #e4ae42
+}
+
+.advancedSearchBox:active{
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+}
+
+.menuBox1{
+    position: absolute;
+    width: 705px;
+    height: 60px;
+    left: 620px;
+    top: 350px;
+
+    background: #EDC473;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.chart{
+    position: absolute;
+    width: 800px;
+    height: 550px;
+    left: 313px;
+    top: 296px;
+    overflow-y: auto
+}
+
+.menuText{
+    position: absolute;
+    width: 142px;
+    height: 41px;
+    left: 285px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 52px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.menuText:active{
+    transform: translateY(2px);
+}
+
+td, th {
+    padding: 30px;
+}
+
+td, th {
+    font-size: 20px;
+}   
+
+td, th {
+    border: 1px solid black;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+table{
+    width: 800px;
+    height: 550px;
+    left: 313px;
+    top: 296px;
+}
+
+.crud{
+    position: absolute;
+    width: 133px;
+    height: 46px;
+    left: 1141px;
+    top: 315px;
+
+    background: #748EED;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+}
+
+.crud:hover{background-color: #748EED;}
+
+.crud:active {
+    background-color: #748EED;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+.moduleLabel{
+    position: absolute;
+    width: 115px;
+    height: 16px;
+    left: 1227px;
+    top: 453px;
+
+}
+
+.moduleLabelText{
+    position: absolute;
+    width: 75px;
+    height: 22px;
+    left: 1141px;
+    top: 453px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+}
+
+.submitBtn{
+    position: absolute;
+    width: 160px;
+    height: 20px;
+    left: 1168px;
+    top: 533px;
+}
+
+.errorMsg{
+    position: absolute;
+    width: 233px;
+    height: 109px;
+    left: 862px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    border: 2px solid #000000;
+
+
+}
+
+.errorMsgText{
+    position: absolute;
+    width: 204px;
+    height: 58px;
+    left: 18px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}
+
+.okErrorButton{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 49px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+
+
+.errorBox{
+    position: absolute;
+    width: 233px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+
+}
+
+.okErrorButton:hover {
+    background-color: #e4ae42
+}
+
+.okErrorButton:active {
+  background-color: #e4ae42;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.okErrorButtonEmpty:hover {
+    background-color: #e4ae42
+}
+
+.okErrorButtonEmpty:active {
+  background-color: #e4ae42;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+.yearsBtn{
+    position: absolute;
+    width: 150px;
+    height: 30px;
+    left: 62px;
+    top: 309px;
+
+    background: #7c57c7;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.yearsBtn:hover{
+    background-color: #6739c4;
+}
+
+.yearsBtn:active{
+    background-color: #6739c4;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.searchBarHome{
+    position: absolute;
+    width: 368px;
+    height: 59px;
+    left: 525px;
+    top: 540px;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+
+.errorWhitespaceMsg{
+    position: absolute;
+    width: 274px;
+    height: 109px;
+    left: 838px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    border: 2px solid #000000;
+    
+}
+
+.okErrorButtonEmpty{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 71px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.errorBoxEmpty{
+    position: absolute;
+    width: 274px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+}
+
+.errorMsgTextEmpty{
+    position: absolute;
+    width: 258px;
+    height: 58px;
+    left: 12px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}
+
+.loginButton{
+    position: absolute;
+    width: 143px;
+    height: 47px;
+    left: 1698px;
+    top: 76px;
+    background: #EDC474;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid black;
+    padding: 10px;
+    justify-content: center;
+}
+
+.loginButton:hover{
+    background-color: #e4ae42
+}
+
+.loginButton:active{
+    background-color: #e4ae42;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.welcome{
+    position: absolute;
+    width: 90px;
+    height: 44px;
+    left: 1715px;
+    top: 29px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 67px;
+    display: flex;
+    align-items: center;
+    text-decoration: initial;
+    color: #000000;
+    text-shadow: 2px 2px white;
+}
+
+.userIcon{
+    
+    position: absolute;
+    left: 14.43%;
+    right: 67.19%;
+    top: 24.37%;
+    bottom: 33.15%;
+}
+
+.signInText{
+    position: absolute;
+    left: 57.5%;
+    right: 52.07%;
+    width: 100px;
+    top: 26.94%;
+    bottom: 65.63%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 450;
+    font-size: 25px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailLabel{
+    position: absolute;
+    left: 62.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 46.35%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 26px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.emailLabel{
+    position: absolute;
+    left: 44.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 46.35%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.emailInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 26px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.passwordLabel{
+    position: absolute;
+    left: 44.78%;
+    right: 38.18%;
+    width: 100px;
+    top: 56%;
+    bottom: 57.23%;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    color: #78787A;
+}
+
+.passwordInput{
+    position: absolute;
+    width: 518px;
+    height: 33px;
+    left: -5px;
+    top: 30px;
+    background: #F0F0F0;
+    box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 5px;
+}
+
+.signInButton{
+    position: absolute;
+    width: 145px;
+    height: 41px;
+    left: 1225px;
+    top: 636px;
+    background: #EDC473;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.signInButton:hover{
+    background-color: #e4ae42
+}
+
+.signInButton:active{
+    background-color: #e4ae42;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+.errorMsgLogin{
+    position: absolute;
+    width: 310px;
+    height: 109px;
+    left: 862px;
+    top: 463px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    border: 2px solid #000000;
+}
+
+.okErrorButtonLogin{
+    position: absolute;
+    width: 136px;
+    height: 33px;
+    left: 85px;
+    top: 69px;
+    background: #EDC474;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.errorBoxLogin{
+    position: absolute;
+    width: 310px;
+    height: 45px;
+    left: 0px;
+    top: 0px;
+    background: #A5A5A5;
+    z-index: 999;
+}
+
+.errorMsgTextLogin{
+    position: absolute;
+    width: 310px;
+    height: 58px;
+    left: 13px;
+    top: -27px;
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    z-index: 999;
+}

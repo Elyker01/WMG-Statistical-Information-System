@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WMGSIS In-Person Classes vs Average Grade</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <header>
+    <img class="wmgLogo" src="{{ url_for('static', filename='wmg.png') }}" alt="wmg">
+    <img class="warwickUni" src="{{ url_for('static', filename='warwickUni.png') }}" alt="wmg">
+    <img class="greyRectangle"src="{{ url_for('static', filename='Home and Menu Rectangle Grey.png') }}" alt="rectangleGrey">
+    <nav>
+      <a class="home" href="{{ url_for('home') }}">Home</a>
+      <a class="menu" href="{{ url_for('menu') }}">Menu</a>
+
+      <!-- Checks if tutor or student is logged in and if so,
+      show the logout button and if not, show the login button -->
+      {% if session == "Tutor" %}
+          <button class="loginButton" onclick="window.location='logout'">Logout</button>
+          <a class="welcome" style=" 
+          width: 180px;
+          height: 44px;
+          left: 1741px;
+          top: 43px; font-size: 10px;">Admin Session</a>
+      {% elif session == "Student" %}
+        <button class="loginButton" onclick="window.location='logout'">Logout</button>
+        <a class="welcome" style="width: 180px;
+        height: 44px;
+        left: 1738px;
+        top: 43px; font-size: 10px;">Student Session</a>
+      {% elif session != "Student" or session != "Tutor" %}
+        <button class="loginButton" onclick="window.location='login'">Login</button>
+      {% endif %}
+    </nav>
+  </header>
+  <main>
+    <div class="rectangle"></div>
+    </div>
+      <form>
+        <div class="menuBox1">
+        <a class="menuText" style="top: 5px;" href="{{ url_for('home') }}">Homepage</a>
+        </div>
+        <!-- Checks if tutor or student is logged in and if so,
+        show the logout button on the menu and if not, show the login button -->
+        {% if session == "Tutor" %}
+          <div class="menuBox1" style="top: 452px">
+            <a class="menuText" style="width: 65px;
+            height: 60px;
+            left: 311px; top:-5px;" href="{{ url_for('logout') }}">Logout</a> 
+          </div>
+        {% elif session == "Student" %}
+        <div class="menuBox1" style="top: 452px">
+          <a class="menuText" style="width: 65px;
+          height: 60px;
+          left: 311px; top:-5px;" href="{{ url_for('logout') }}">Logout</a> 
+        </div>
+
+        {% elif session != "Tutor" or session != "Student" %}
+          <div class="menuBox1" style="top: 452px">
+            <a class="menuText" style="width: 65px;
+            height: 60px;
+            left: 317px; top:-5px;" href="{{ url_for('login') }}">Login</a> 
+          </div>
+        {% endif %}
+
+        <div class="menuBox1" style="top: 550px">
+            <a class="menuText" style="width: 600px;
+            height: 43px;
+            left: 58px;" href="{{ url_for('inPersonClasses2019') }}">In-Person classes vs Average Grade per Module</a>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <div class="rectangleBottom">
+    <p style="font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;color: #FFFFFF;">Contact WMG at help@wmgcustomerservice.com</p>
+    </div>
+  </footer>
+
+</body>
+</html>
