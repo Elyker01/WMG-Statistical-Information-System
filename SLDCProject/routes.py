@@ -3,7 +3,7 @@ This script runs the application using a development server.
 It contains the definition of routes and views for the application.
 """
 import sqlite3
-from flask import redirect, request, render_template, url_for, session
+from flask import redirect, request, render_template, url_for, session, abort
 from flask import Flask
 import matplotlib.pyplot as plot
 import time
@@ -244,7 +244,7 @@ class routesClass:
 
     #Creates chart using the matplotlib library
     def createChart2019(data):
-    
+     
         #Connect to the database and carry out a select all to fetch all data
         #And store it into the data variable
         conn = sqlite3.connect('wmgsisDB.db')
@@ -279,7 +279,7 @@ class routesClass:
 
         # Save the chart to the static folder of the solution
         fig.savefig(os.path.join(app.static_folder, 'chart2019.png'))
-   
+       
 
     def createChart2020(data):
         conn = sqlite3.connect('wmgsisDB.db')
@@ -412,6 +412,8 @@ class routesClass:
             conn.close()
 
             return redirect(url_for('inPersonClasses2019'))
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
     @app.route('/deleteData2020', methods=['POST'])
     def deleteData2020():
@@ -428,6 +430,8 @@ class routesClass:
             conn.close()
 
             return redirect(url_for('inPersonClasses2020'))
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
     @app.route('/deleteData2021', methods=['POST'])
     def deleteData2021():
@@ -444,6 +448,8 @@ class routesClass:
             conn.close()
 
             return redirect(url_for('inPersonClasses2021'))
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
     @app.route('/deleteData2022', methods=['POST'])
     def deleteData2022():
@@ -461,7 +467,8 @@ class routesClass:
 
             return redirect(url_for('inPersonClasses2022'))
 
-
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
 
@@ -514,6 +521,8 @@ class routesClass:
                 return render_template("inPersonClasses2019.html", error=True, session="Tutor", data=notChangedData)
   
             conn.close()
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
     @app.route('/updateData2020', methods=['POST'])
     def updateData2020():
@@ -551,6 +560,8 @@ class routesClass:
                 return render_template("inPersonClasses2020.html", error=True, session="Tutor", data=notChangedData)
   
             conn.close()
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
     @app.route('/updateData2021', methods=['POST'])
     def updateData2021():
@@ -585,8 +596,8 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2021(notChangedData)
                 return render_template("inPersonClasses2021.html", error=True, session="Tutor", data=notChangedData)
-  
-            conn.close()
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
     @app.route('/updateData2022', methods=['POST'])
@@ -623,8 +634,9 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2021(notChangedData)
                 return render_template("inPersonClasses2022.html", error=True, session="Tutor", data=notChangedData)
-  
             conn.close()
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
     @app.route('/addData2019', methods=['POST'])
@@ -648,7 +660,8 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2019(notChangedData)
                 return render_template("inPersonClasses2019.html", whiteSpaceError=True, session="Tutor", data=notChangedData)
-    
+  
+  
 
             else:
                 c.execute("SELECT * FROM statistic2019 WHERE LOWER(moduleName) = ?", (moduleName.strip().lower(),))
@@ -661,6 +674,7 @@ class routesClass:
                     notChangedData = c.fetchall()
                     routesClass.createChart2022(notChangedData)
                     return render_template('inPersonClasses2019.html', moduleExistError=True, session="Tutor", data=notChangedData)
+             
 
                 #If the module name doesn't already exist, the data will be inserted into the database 
                 #which will then be displayed on the chart and on the table.
@@ -675,7 +689,7 @@ class routesClass:
 
                     return redirect(url_for('inPersonClasses2019'))
         elif 'user' in session and routesClass.users[1].get(session['user']):
-            return redirect('/unauthorised')
+           abort(403, "Forbidden")
 
     @app.route('/addData2020', methods=['POST'])
     def addData2020():
@@ -836,6 +850,8 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2019(notChangedData)
                 return render_template("inPersonClasses2019.html", error=True, session="Tutor", data=notChangedData)
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
     @app.route('/deleteModule2020', methods=['POST'])
@@ -873,6 +889,8 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2019(notChangedData)
                 return render_template("inPersonClasses2020.html", error=True, session="Tutor", data=notChangedData)
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
     @app.route('/deleteModule2021', methods=['POST'])
@@ -910,6 +928,8 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2019(notChangedData)
                 return render_template("inPersonClasses2021.html", error=True, session="Tutor", data=notChangedData)
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
     @app.route('/deleteModule2022', methods=['POST'])
@@ -947,5 +967,7 @@ class routesClass:
                 notChangedData = c.fetchall()
                 routesClass.createChart2019(notChangedData)
                 return render_template("inPersonClasses2022.html", error=True, session="Tutor", data=notChangedData)
+        elif 'user' in session and routesClass.users[1].get(session['user']):
+            abort(403, "Forbidden")
 
 
