@@ -679,7 +679,7 @@ class routesClass:
                 #If the module name doesn't already exist, the data will be inserted into the database 
                 #which will then be displayed on the chart and on the table.
                 else:
-                    c.execute("INSERT INTO statistic2019 (moduleName, grade, percentage) VALUES (?, ?, ?)", (string.capwords(moduleName.strip()), grade, percentage))
+                    c.execute("INSERT INTO statistic2019 (moduleName, grade, percentage) VALUES (?, ?, ?)", (moduleName.strip(), grade, percentage))
                     c.execute("SELECT * FROM statistic2019")
                     conn.commit()
                     data = c.fetchall()
@@ -719,7 +719,7 @@ class routesClass:
                     routesClass.createChart2022(notChangedData)
                     return render_template('inPersonClasses2020.html', moduleExistError=True, session="Tutor", data=notChangedData)
                 else:
-                    c.execute("INSERT INTO statistic2020 (moduleName, grade, percentage) VALUES (?, ?, ?)", (string.capwords(moduleName.strip()), grade, percentage))
+                    c.execute("INSERT INTO statistic2020 (moduleName, grade, percentage) VALUES (?, ?, ?)", (moduleName.strip(), grade, percentage))
                     c.execute("SELECT * FROM statistic2020")
                     conn.commit()
                     data = c.fetchall()
@@ -756,7 +756,7 @@ class routesClass:
                     routesClass.createChart2022(notChangedData)
                     return render_template('inPersonClasses2021.html', moduleExistError=True, session="Tutor", data=notChangedData)
                 else:
-                    c.execute("INSERT INTO statistic2021 (moduleName, grade, percentage) VALUES (?, ?, ?)", (string.capwords(moduleName.strip()), grade, percentage))
+                    c.execute("INSERT INTO statistic2021 (moduleName, grade, percentage) VALUES (?, ?, ?)", (moduleName.strip(), grade, percentage))
                     c.execute("SELECT * FROM statistic2021")
                     conn.commit()
                     data = c.fetchall()
@@ -795,7 +795,7 @@ class routesClass:
                     routesClass.createChart2022(notChangedData)
                     return render_template('inPersonClasses2022.html', moduleExistError=True, session="Tutor", data=notChangedData)
                 else:
-                    c.execute("INSERT INTO statistic2022 (moduleName, grade, percentage) VALUES (?, ?, ?)", (string.capwords(moduleName.strip()), grade, percentage))
+                    c.execute("INSERT INTO statistic2022 (moduleName, grade, percentage) VALUES (?, ?, ?)", (moduleName.strip(), grade, percentage))
                     c.execute("SELECT * FROM statistic2022")
                     conn.commit()
                     data = c.fetchall()
